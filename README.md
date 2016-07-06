@@ -1,2 +1,2 @@
 # mkbootimg
-Unpack and repack boot.img , (Support MTK) mkbootimg_tools
+Unpack and repack boot.img , (support MTK) mkbootimg_tools
