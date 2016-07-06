@@ -87,8 +87,6 @@ static void *load_file(const char *fn, unsigned *_sz, enum mtk_type type)
         hdr->info.size = datasz;
         memset(hdr->info.name, 0, sizeof(hdr->info.name));
 
-		//
-		// 此处不知是否需要同步，尽量保持同步
         strcpy(hdr->info.name, mtk_names[type]);
     }
 	// add end
@@ -104,11 +102,6 @@ oops:
 }
 
 
-//
-// 解包的时候，解析出完整的、可用的zImage/ramdisk文件，
-// 不要携带头部 --- 跳过512b写入文件
-// 打包的时候，再添加相应的头部信息
-//
 int newrepackbootimg_usage(void)
 {
     fprintf(stderr,"usage: mkbootimg\n"
